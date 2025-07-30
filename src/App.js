@@ -3,8 +3,8 @@ import "./App.css";
 
 const categories = [
   { title: "Unstitched", img: "../images/unstiched clothes.jpeg" },
-  { title: "Unstitched-To-Stitched", img: "../images/unstitched to stitched.jpeg" },
-  { title: "Ready To Wear", img: "../images/Ready to wear.jpeg" },
+  { title: "Unstitched-To-Stitched", img: "../images/unstitched to Stitched.jpeg" },
+  { title: "Ready To Wear", img: "../images/Ready to Wear.jpeg" },
 ];
 
 const products = [
