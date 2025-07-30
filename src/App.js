@@ -1,55 +1,63 @@
 import React from "react";
 import "./App.css";
 
+const categories = [
+  { title: "Unstitched", img: "../images/unstiched clothes.jpeg" },
+  { title: "Unstitched-To-Stitched", img: "../images/unstitched to stitched.jpeg" },
+  { title: "Ready To Wear", img: "../images/Ready to wear.jpeg" },
+];
+
+const products = [
+  { name: "Khussa 1", img: "../images/khussa 1.jpeg" },
+  { name: "Khussa 2", img: "../images/khussa 2.jpeg" },
+];
+
 function App() {
   return (
     <div className="app">
-      <header className="header">
-        <h1>Gul Ahmed</h1>
-        <nav>
-          <ul>
-            <li>Home</li>
-            <li>Women</li>
-            <li>Men</li>
-            <li>Sale</li>
-            <li>Contact</li>
-          </ul>
-        </nav>
-      </header>
+      {/* Header */}
+      <div className="top-bar">
+        <span>PKR</span>
+        <span className="logo">🟢 <strong>ideas</strong></span>
+        <span>🔍 🛒</span>
+      </div>
 
-      <section className="hero">
-        <h2>Summer Collection 2025</h2>
-        <p>Unstitched, Pret, Accessories & More</p>
-      </section>
+      {/* Title */}
+      <h2 className="section-title">Sale On Fashion Accessories</h2>
 
-      <section className="categories">
-        <div className="category">Unstitched</div>
-        <div className="category">Pret</div>
-        <div className="category">Accessories</div>
-        <div className="category">Footwear</div>
-      </section>
+      {/* Categories */}
+      <div className="category-row">
+        {categories.map((cat, i) => (
+          <div className="category" key={i}>
+            <img src={cat.img} alt={cat.title} />
+            <p>{cat.title}</p>
+          </div>
+        ))}
+      </div>
 
-      <section className="products">
-        <div className="product-card">
-          <img src="./public/images/men lawn suit" alt="lawn suit" />
-          <h3>Printed Lawn Suit</h3>
-          <p>PKR 3,950</p>
-        </div>
-        <div className="product-card">
-          <img src="./public/images/men kurta" alt="men kurta" />
-          <h3>Embroidered Kurti</h3>
-          <p>PKR 2,750</p>
-        </div>
-        <div className="product-card">
-          <img src="./public/images/men embroidered kurti" alt="cotton suit" />
-          <h3>2PC Cotton Set</h3>
-          <p>PKR 4,500</p>
-        </div>
-      </section>
+      {/* Filter Bar */}
+      <div className="filter-bar">
+        <span>Filters (333 Items)</span>
+        <span className="display-icon">▮▮▯</span>
+        <span>Sort ⇅</span>
+      </div>
 
-      <footer className="footer">
-        <p>© 2025 Gul Ahmed. All rights reserved.</p>
-      </footer>
+      {/* Products */}
+      <div className="product-grid">
+        {products.map((product, i) => (
+          <div className="product-card" key={i}>
+            <img src={product.img} alt={product.name} />
+          </div>
+        ))}
+      </div>
+
+      {/* Bottom Nav */}
+      <div className="bottom-nav">
+        <div>☰<br />Menu</div>
+        <div>🏷️<br />Sale</div>
+        <div>👤<br />Account</div>
+        <div>🌍<br />Region</div>
+      </div>
     </div>
   );
 }
