@@ -1,0 +1,29 @@
+/* FilterBar.css */
+.filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 15px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+.display-options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.display-options span {
+  cursor: pointer;
+  padding: 5px;
+  transition: color 0.3s;
+}
+
+.display-options .active {
+  color: #4CAF50;
+  font-weight: bold;
+  border-bottom: 2px solid #4CAF50;
+}

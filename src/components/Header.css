@@ -1,0 +1,160 @@
+/* Global resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  font-family: 'Arial', sans-serif;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Top bar */
+.top-bar {
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+/* Top links (left) and extra icons (right) */
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 20px;
+  background-color: #f7f7f7;
+  font-size: 14px;
+}
+
+/* Left side: toplinks */
+.top-links {
+  display: flex;
+  gap: 20px;
+}
+
+.top-links a {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+}
+
+/* Right side: search, track, PKR */
+.top-icons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.top-icons span {
+  font-weight: 500;
+}
+
+/* Logo centered */
+.logo {
+  height: 234px;
+  object-fit: contain;
+  display: block;
+  margin: -30px auto 0 auto; /* raised a bit */
+}
+
+/* Main header (cart, menu icon) */
+.header-main {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+/* Cart and user icons */
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.cart-icon-wrapper {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  padding: 2px 6px;
+}
+
+/* Navigation bar below logo */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 20px 0 30px;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  margin-top: -30px; /* shift upward to snug under logo */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+/* Hamburger menu */
+.menu-toggle {
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 999;
+    border-top: 1px solid #ccc;
+    padding-bottom: 20px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .top-row {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .logo {
+    height: 180px;
+    margin-top: 0;
+  }
+}

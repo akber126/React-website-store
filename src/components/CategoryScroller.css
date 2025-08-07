@@ -1,0 +1,41 @@
+.category-scroller {
+  display: flex;
+  justify-content: center; /* <-- Center horizontally */
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  margin: 0 auto;            /* <-- This ensures it's centered in parent */
+  max-width: 1000px;           /* Optional: limit width */
+}
+
+
+.category-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.category-item {
+  flex: 0 0 80px;
+  text-align: center;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.category-item:hover {
+  transform: scale(1.05);
+}
+
+.category-item img {
+  width: 70px;
+  height: 70px;
+  border-radius: 15px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+.category-item p {
+  font-size: 11px;
+  margin-top: 5px;
+  text-transform: uppercase;
+  color: #333;
+}
