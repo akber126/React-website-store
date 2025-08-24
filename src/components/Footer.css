@@ -1,34 +1,22 @@
-.footer {
-  background-color: #f6f6f6;
+.site-footer {
+  background: #f5f5f5;
   color: #333;
-  padding: 40px 20px;
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   border-top: 1px solid #ddd;
 }
 
-.footer-columns {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.footer-col {
-  flex: 1 1 200px;
-  min-width: 200px;
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  padding: 50px 60px;
 }
 
 .footer-col h4 {
-  margin-bottom: 10px;
   font-size: 16px;
+  margin-bottom: 15px;
+  color: #111;
   font-weight: bold;
-}
-
-.footer-col p,
-.footer-col li {
-  font-size: 14px;
-  line-height: 1.6;
-  margin-bottom: 8px;
 }
 
 .footer-col ul {
@@ -37,28 +25,78 @@
   margin: 0;
 }
 
-.footer-col a {
-  text-decoration: none;
-  color: #333;
-  transition: color 0.2s;
+.footer-col ul li {
+  margin-bottom: 8px;
+  font-size: 14px;
 }
 
-.footer-col a:hover {
-  color: #d10024;
+.footer-col ul li a {
+  color: #555;
+  text-decoration: none;
+}
+
+.footer-col ul li a:hover {
+  color: #000;
+}
+
+.order-phone {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.newsletter {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.newsletter input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.newsletter button {
+  padding: 8px 14px;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.newsletter button:hover {
+  background: #444;
+}
+
+.social-links {
+  margin: 12px 0;
+  font-size: 14px;
+}
+
+.social-links a {
+  color: #555;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.social-links a:hover {
+  color: #000;
+}
+
+.corporate-email {
+  font-size: 13px;
+}
+
+.corporate-email a {
+  color: #555;
+  text-decoration: none;
 }
 
 .footer-bottom {
-  margin-top: 30px;
-  text-align: center;
-  font-size: 13px;
-  color: #777;
   border-top: 1px solid #ddd;
-  padding-top: 15px;
-}
-
-/* Mobile tweaks */
-@media (max-width: 768px) {
-  .footer-columns {
-    flex-direction: column;
-  }
+  text-align: center;
+  padding: 15px;
+  font-size: 13px;
+  color: #666;
 }

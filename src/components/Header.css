@@ -1,89 +1,96 @@
-/* Global resets */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Header.css */
+.site-header {
+  width: 100%;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
 }
 
-.header {
-  font-family: 'Arial', sans-serif;
-  border-bottom: 1px solid #ddd;
-}
-
-/* Top bar */
-.top-bar {
-  color: #fff;
-  text-align: center;
-  padding: 5px 0;
-  font-size: 14px;
-}
-
-/* Top links (left) and extra icons (right) */
-.top-row {
+.header-top {
+  margin-right: 38px;
+  margin:-12px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 14px 40px;
+
+
+  /* breathing room like Gul Ahmed */
+}
+
+/* Left icons */
+.header-left {
+  margin-left: -25px;
+  display: flex;
+  align-items: end;
+  gap: 26px;
+  /* slightly more space between */
+}
+
+.top-icon {
+  display: flex;
+  flex-direction: column;
+  /* icon above text */
   align-items: center;
-  padding: 6px 20px;
-  background-color: #f7f7f7;
+  gap: 6px;
+  /* more space between icon and text */
   font-size: 14px;
-}
-
-/* Left side: toplinks */
-.top-links {
-  display: flex;
-  gap: 20px;
-}
-
-.top-links a {
+  /* text slightly bigger */
+  color: #6E6E6E;
   text-decoration: none;
-  color: #333;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-weight: 500;
+  margin: 0 5px;
 }
 
-/* Right side: search, track, PKR */
-.top-icons {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.top-icons span {
-  font-weight: 500;
+.top-icon img {
+  width: 49px;
+  /* bigger icons */
+  height: auto;
 }
 
 /* Logo centered */
-.logo {
-  height: 234px;
-  object-fit: contain;
-  display: block;
-  margin: -30px auto 0 auto; /* raised a bit */
-}
-
-/* Main header (cart, menu icon) */
-.header-main {
+.header-logo img {
+  width: auto;
+  height: 156px;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 10px 20px;
+  margin: -79px;
+  margin-left: -145px;
 }
 
-/* Cart and user icons */
-.header-icons {
+/* Right icons */
+.header-right {
+  margin: -22px;
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
+  height: 105px;
 }
 
-.icon {
-  font-size: 20px;
+.icon-btn {
+  background: none;
+  border: none;
+  padding: 0;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.cart-icon-wrapper {
+.icon-btn img {
+  width: 49px;
+  /* Adjusted to a consistent size for all icons in header-right */
+  height: auto;
+}
+
+.cart-wrapper {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-wrapper img {
+  width: 32px;
+  /* consistent with other icons */
 }
 
 .cart-count {
@@ -92,69 +99,64 @@
   right: -10px;
   background-color: red;
   color: white;
+  font-size: 10px;
+  padding: 2px 4px;
   border-radius: 50%;
-  font-size: 12px;
-  padding: 2px 6px;
 }
 
-/* Navigation bar below logo */
+/* Currency dropdown + Rs symbol */
+.currency-container {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  gap: 4px;
+}
+
+.currency-dropdown {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 500;
+  appearance: none;
+  cursor: pointer;
+}
+
+.currency-dropdown option {
+  padding: 5px 10px;
+}
+
+.currency-container img {
+  width: 32px;
+  /* consistent with other icons */
+}
+
+.currency-container::after {
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  color: #555;
+  pointer-events: none;
+}
+
+/* Navigation menu */
 .nav-links {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 25px;
-  padding: 20px 0 30px;
-  background-color: #fff;
-  border-top: 1px solid #eee;
-  margin-top: -30px; /* shift upward to snug under logo */
+  gap: 28px;
+  padding: 8px 0;
+  font-size: 13px;
+
 }
 
 .nav-links a {
+  color: #333;
   text-decoration: none;
-  color: #222;
-  font-weight: 500;
-  font-size: 15px;
 }
 
-/* Hamburger menu */
-.menu-toggle {
-  font-size: 22px;
-  cursor: pointer;
-  display: none;
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fff;
-    width: 100%;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 999;
-    border-top: 1px solid #ccc;
-    padding-bottom: 20px;
-  }
-
-  .nav-links.open {
-    display: flex;
-  }
-
-  .top-row {
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
-  }
-
-  .logo {
-    height: 180px;
-    margin-top: 0;
-  }
+.nav-links a:hover {
+  text-decoration: underline;
 }

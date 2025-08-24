@@ -1,41 +1,58 @@
 .category-scroller {
+  margin-left: -79px;
   display: flex;
-  justify-content: center; /* <-- Center horizontally */
-  gap: 12px;
-  flex-wrap: wrap;
-  padding: 10px 0;
-  margin: 0 auto;            /* <-- This ensures it's centered in parent */
-  max-width: 1000px;           /* Optional: limit width */
+  justify-content: space-evenly;
+  overflow-x: auto;
+  gap: 24px;
+  padding: 12px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* IE and Edge */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* iOS smooth scroll */
+  user-select: none;
 }
 
-
 .category-scroller::-webkit-scrollbar {
-  display: none;
+  display: none;               /* Chrome, Safari, Opera */
 }
 
 .category-item {
-  flex: 0 0 80px;
-  text-align: center;
-  margin-right: 15px;
+  flex: 0 0 auto;
+  width: 90px;
   cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.category-item:hover {
-  transform: scale(1.05);
+  text-align: center;
+  font: 400 13px/1.35 "Helvetica" "Neue","Quicksand","Montserrat";
+  font-weight: 60000;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #333;
+  user-select: none;
+  transition: color 0.3s ease;
 }
 
 .category-item img {
-  width: 70px;
-  height: 70px;
-  border-radius: 15px;
+  width: 109px;
+  height: 111px;
+  border-radius: 0 40%;
   object-fit: cover;
-  border: 1px solid #ddd;
+  border: 1.5px solid transparent;
+  margin-bottom: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.category-item p {
-  font-size: 11px;
-  margin-top: 5px;
-  text-transform: uppercase;
-  color: #333;
+.category-item:hover img,
+.category-item.active img {
+  border-color: #d32f2f;
+  box-shadow: 0 4px 8px rgba(211, 47, 47, 0.35);
+}
+
+.category-item:hover,
+.category-item.active {
+  color: #d32f2f;
+}
+
+.category-item.active {
+  font-weight: 700;
 }
